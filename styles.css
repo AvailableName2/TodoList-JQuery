@@ -8,14 +8,39 @@
   vertical-align: baseline;
   background: transparent;
   text-decoration: none;
-  color: var(--colorNeutral4);
 } /* reset everything to remove the white margin above */
 html, body {
+  width: 100%;
   height: 100%;
   min-height: 100%;
-  padding: 5em 5em;
+  padding: 0 0;
   z-index: 1;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(159, 147, 166);
+  font-size: 20px;
+}
+
+#toolBar {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  min-width: 100%;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 100%;
+  height: min(4em, 10vh);
+  font-size: 30px;
+  color: rgb(211, 211, 211);
+  background-color: rgb(123, 66, 160);
+}
+#toolBar h1 {
+  display: inline;
+  padding: auto;
+  vertical-align: middle;
+  height: -moz-min-content;
+  height: min-content;
 }
 
 #todoList {
@@ -28,7 +53,7 @@ html, body {
   padding: 0.3em 0.7em;
   border-radius: 1em;
   font-size: 26px;
-  margin: 2em auto;
+  margin: 0.5em auto;
 }
 
 .todo {
@@ -41,6 +66,10 @@ html, body {
   padding: 0.3em 0.7em;
   border-radius: 1em;
   font-size: 26px;
+  min-width: 20em;
+}
+.todo.deleted {
+  background-color: red;
 }
 .todo .todoStatus {
   margin-left: 4em;
