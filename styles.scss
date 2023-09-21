@@ -1,0 +1,59 @@
+
+@mixin window($bgColor: inherit) {
+    width: fit-content;
+    height: fit-content;
+
+    background-color: $bgColor;
+
+    margin: 0.5em 1em;
+    padding: 0.3em 0.7em;
+    border-radius: 1em;
+
+    font-size: 26px;
+}
+
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    text-decoration: none;
+    color: var(--colorNeutral4);
+} /* reset everything to remove the white margin above */
+
+html, body {
+    height: 100%;
+    min-height: 100%;
+    padding: 5em 5em;
+    z-index: 1;
+    background-color: rgb(255, 255, 255);
+}
+
+#todoList {
+    @include window( rgb(209, 209, 255));
+    margin: 2em auto;
+}
+
+.todo {
+    @include window( rgb(178, 178, 255));
+    .todoStatus {
+        margin-left: 4em;
+    }
+
+    .todoToggle {
+        @include window(rgb(147, 147, 228));
+        
+        &:hover {
+            filter: brightness(90%);
+        }
+        &:active {
+            filter: brightness(80%);
+        }
+    }
+}
